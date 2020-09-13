@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title padding-top>WhatsApp
+    <ion-icon name="more" style="float: right; margin-left: 15px; color:white"></ion-icon>
+      <ion-icon name="search" style="float: right; color:white"></ion-icon>
+    </ion-title>
+</ion-navbar>
+<ion-toolbar>
+        <ion-segment [(ngModel)]="category" color="light">
+          <ion-segment-button value="camera" (click)="cam()" id="cam">
+            <ion-icon name="camera" style="font-size: 2rem;"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="CHATS">
+            CHATS
+          </ion-segment-button>
+          <ion-segment-button value="STATUS">
+            STATUS
+          </ion-segment-button>
+          <ion-segment-button value="CALLS">
+            CALLS
+          </ion-segment-button>
+        </ion-segment>
+</ion-toolbar>
+</ion-header>
+
+      <ion-content padding>
+      <div [ngSwitch]="category" swipeSegment [tabsList]="categories" [(currentTab)]="category" (tabChanged)="onTabChanged($event)" class="swipe-area">
+        <ion-list *ngSwitchCase="'camera'">
+          <img src="{{pic}}">
+        </ion-list>
+        
+        <ion-list *ngSwitchCase="'CHATS'">
+          <ion-item padding-left:0px (click)="next()">
+            <ion-avatar item-left class="avatar">
+              <img src="assets/imgs/KakashiDP.jpg">
+            </ion-avatar>
+            <h2>Amogh</h2>
+            <h4 style="color: gray">Watch Dr.Stone,, it seems really good!!</h4>
+          </ion-item>
+          <ion-item padding-left:0px>
+              <ion-avatar item-left class="avatar">
+                <img src="assets/imgs/sunset.jpeg">
+              </ion-avatar>
+              <h2>Mom</h2>
+              <h4 style="color: gray">Call me when you reach home</h4>
+            </ion-item>
+        </ion-list>
+        
+      
+
+          <ion-list *ngSwitchCase="'STATUS'">
+              <ion-item>
+                  <ion-avatar item-left class="avatar">
+                      <img src="assets/imgs/Itachi wallpaper.jpg">
+                    </ion-avatar>  
+                <h2>My Status</h2><h4 style="color:gray">Tap to add status update</h4>
+              </ion-item>
+              <ion-item>
+                  <div style="color:gray; background-color:lightgray;" id="d1">Recent Updates</div>
+              </ion-item>
+              <ion-item>
+                  <ion-avatar item-left class="avatar">
+                      <img style="border: 3px dashed teal" src="assets/imgs/KakashiDP.jpg">
+                    </ion-avatar>  
+                <h2>Amogh</h2><h4 style="color:gray">10 minutes ago</h4>
+              </ion-item>
+            </ion-list>
+    
+    
+            <ion-list *ngSwitchCase="'CALLS'">
+                <ion-item padding-left:0px >
+                    <ion-avatar item-left class="avatar">
+                        <img src="assets/imgs/sunset.jpeg">
+                      </ion-avatar>  
+                      <h2>Mom</h2>
+                      <h4 style="color: gray">Yesterday, 10:30</h4>              
+                      <ion-icon item-right style="color:teal" name="ios-videocam"></ion-icon>
+                </ion-item>
+                <ion-item padding-left:0px >
+                    <ion-avatar item-left class="avatar">
+                        <img src="assets/imgs/KakashiDP.jpg">
+                      </ion-avatar>  
+                      <h2>Amogh</h2>
+                      <h4 style="color: gray">Yesterday, 11:15</h4>              
+                      <ion-icon item-right style="color:teal" name="call"></ion-icon>
+                </ion-item>
+            </ion-list>
+          </div>
+          
+    </ion-content>

@@ -1,0 +1,34 @@
+page-home {
+  .toolbar-title-md{
+      color:white;
+  }
+  ion-navbar{
+      ion-icon{
+          float: right;
+          margin-left: 20px; 
+      }
+  }   
+  #cam{
+      padding: 0px !important;
+      max-width: 50px !important;
+  }
+  ion-segment-button{
+      font-style: bold !important;
+      font-size: 15px !important; 
+  }
+  .swipe-area {
+      height:100%;
+      width:100%;
+    }
+  .toolbar-background {
+      background-color:teal ;
+    }
+
+  .item-md {
+      padding-left: 0px;
+  }
+  .item-md ion-avatar img{
+      height: 50px;
+      width: 50px;
+  }      
+}
